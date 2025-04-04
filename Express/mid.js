@@ -14,12 +14,16 @@ const adi = (req, res, next) => {
     next();
 }
 
+app.use(adi)//application middleware
+
+
+
 app.get("/", (req, res) => {
     res.send("This is my home page")
 })
 
 //route middleware
-app.get("/about", adi, (req, res) => {
+app.get("/about", (req, res) => {
     res.send("This is my about page");
 })
 
